@@ -13,7 +13,7 @@
         <div class="row">
             <div class="card">
                 <h4>Data Pengguna
-                <a href="./tambah.blade.php" class="btn btn-primary float-end">Tambah Pengguna</a>
+                <a href="{{route('tambah')}}" class="btn btn-primary float-end">Tambah Pengguna</a>
                 </h4>
 
             </div>
@@ -27,40 +27,36 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Role</th>
                         </tr>
                     </thead>
                     <tbody>
                                     <tr>
                                         <td><?php echo '1'?></td>
                                         <td>
-                                            <a href="" class="btn btn-primary btn-sm">Detail</a>
-                                            <a href="" class="btn btn-warning btn-sm">Edit</a>
+                                            <a href="{{route('detail')}}" class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{route('edit')}}" class="btn btn-warning btn-sm">Edit</a>
                                             <form method="post" style="display: inline;">
-                                                <button type="submit" name="delete" value="" class="btn btn-danger btn-sm">Hapus</button>
+                                
                                             </form>
                                         </td>
                                         <td><img src="avatar.jpg" alt="Avatar" width="50"></td>
                                         <td><?php echo 'Teguh Wandala'?></td>
                                         <td><?php echo 'teguhwandala@gmail.com'?></td>
                                         <td><?php echo '087765904262'?></td>
-                                        <td><?php echo 'admin'?></td>
                                     </tr>
 
                                     <tr>
                                         <td><?php echo '2'?></td>
                                         <td>
-                                            <a href="./detail.blade.php" class="btn btn-primary btn-sm">Detail</a>
-                                            <a href="./edit.blade.php" class="btn btn-warning btn-sm">Edit</a>
+                                            <a href="{{route('detail')}}" class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{route('edit')}}" class="btn btn-warning btn-sm">Edit</a>
                                             <form method="post" style="display: inline;">
-                                                <button type="submit" name="delete" value="" class="btn btn-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>
                                         <td><img src="avatar.jpg" alt="Avatar" width="50"></td>
                                         <td><?php echo 'El Gatito'?></td>
                                         <td><?php echo 'gatitomachontos@gmail.com'?></td>
                                         <td><?php echo '0855467324155'?></td>
-                                        <td><?php echo 'staff'?></td>
                                     </tr>
                     </tbody>
                 </table>

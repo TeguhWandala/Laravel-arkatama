@@ -12,7 +12,7 @@
         <header class="d-flex justify-content-between my-4">
             <h1>Edit Pengguna</h1>
             <div>
-                <a href="./tampil.blade.php" class="btn btn-primary">Kembali</a>
+                <a href="{{route('tampil')}}" class="btn btn-primary">Kembali</a>
             </div>
         </header>
 

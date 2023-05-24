@@ -12,7 +12,7 @@
         <header class="d-flex justify-content-between my-4">
             <h1>Detail Pengguna</h1>
             <div>
-                <a href="./tampil.blade.php" class="btn btn-primary">Kembali</a>
+                <a href="{{route('tampil')}}" class="btn btn-primary">Kembali</a>
             </div>
         </header>
                     <form class="row g-3" method="post" enctype= "multipart/form-data">
@@ -24,10 +24,7 @@
                                 <?php echo 'Teguh Wandala' ?>
                             </p>
                         </div>
-                        <div class="col-md-6">
-                            <label for="role" class="form-label">Role</label>
-                            <p class="form-control">
-                                <?php echo 'admin' ?>
+                        
                             </p>
                         </div>
                         <div class="col-md-6">

@@ -21,4 +21,7 @@ class UserController extends Controller
     public function detailkan(){
         return view('detail');
     }
+    public function index() {
+        return view('user.index');
+    }
 }

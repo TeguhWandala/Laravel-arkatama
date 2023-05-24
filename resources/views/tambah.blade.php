@@ -12,7 +12,7 @@
         <header class="d-flex justify-content-between my-4">
             <h1>Tambah Pengguna</h1>
             <div>
-                <a href="./tampil.blade.php" class="btn btn-primary">Kembali</a>
+                <a href="{{route('tambah')}}" class="btn btn-primary">Kembali</a>
             </div>
         </header>
         <form class="row g-3" method="post" enctype= "multipart/form-data">
