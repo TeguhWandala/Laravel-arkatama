@@ -23,7 +23,7 @@ class UserController extends Controller
         $roles = Role::all();
         
         // Tampilkan form create user dengan passing data roles
-        return view('user.create', compact('roles'));
+        return view('user.create', compact('role'));
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class UserController extends Controller
         $roles = Role::all();
         
         // Tampilkan halaman edit dengan passing data user dan roles
-        return view('user.edit', compact('user', 'roles'));
+        return view('user.edit', compact('user', 'role'));
     }
     
     public function update(Request $request, $id)
