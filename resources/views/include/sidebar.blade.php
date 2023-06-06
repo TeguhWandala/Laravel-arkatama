@@ -28,6 +28,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('category.index') }}">Category</a>
                         <a class="nav-link" href="{{ route('product.index') }}">Product</a>
+                        
                     </nav>
                 </div>
             @endif
@@ -41,6 +42,8 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('role.index') }}">Role</a>
                         <a class="nav-link" href="{{ route('user.index') }}">User</a>
+                        <a class="nav-link" href="{{ route('category.create') }}">Create Category</a>
+                        <a class="nav-link" href="{{ route('product.create') }}">Create Product</a>
                     </nav>
                 </div>
             @endif

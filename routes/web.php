@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,8 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('login.aut
 
 Route::middleware('auth')->group(function() {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    
+    Route::get('product/cart', [ProductController::class, 'index'])->name('product.cart');
 
 
     // Dashboard
@@ -92,24 +95,5 @@ Route::middleware('auth')->group(function() {
         Route::put('/role/{id}', [RoleController::class, 'update'])->name('role.update');
         Route::delete('/role/{id}', [RoleController::class, 'destroy'])->name('role.destroy');
     });
-        // ADMIN
-    Route::middleware('role:Admin')->group(function() {
-        // User
-        Route::get('/user', [UserController::class, 'index'])->name('user.index');
-        Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-        Route::post('/user', [UserController::class, 'store'])->name('user.store');
-        Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
-        Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
-        Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
-
-        // Role
-        Route::get('/role', [RoleController::class, 'index'])->name('role.index');
-        Route::get('/role/create', [RoleController::class, 'create'])->name('role.create');
-        Route::post('/role', [RoleController::class, 'store'])->name('role.store');
-        Route::get('/role/edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
-        Route::put('/role/{id}', [RoleController::class, 'update'])->name('role.update');
-        Route::delete('/role/{id}', [RoleController::class, 'destroy'])->name('role.destroy');
-    });
-
-
+       
 });

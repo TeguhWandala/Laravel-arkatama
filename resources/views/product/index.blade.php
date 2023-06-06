@@ -4,9 +4,6 @@
     <main>
         <div class="container-fluid px-4">
             <h1 class="my-4">Product</h1>
-
-            <a class="btn btn-primary mb-2" href="{{ route('product.create') }}" role="button">Create New</a>
-
             <div class="card mb-4">
                 <div class="card-body">
                     <table id="dataTable" class="table table-striped">
@@ -35,6 +32,7 @@
                                         @endif
                                     </td>
                                     <td>
+                                        @if (Auth::user()->role->name == 'Admin')
                                         <form onsubmit="return confirm('Are you sure? ');" action="{{ route('product.destroy', $product->id) }}" method="POST">
                                             <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                             @csrf
@@ -44,6 +42,7 @@
                                         </form>
                                     </td>
                                 </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>

@@ -36,7 +36,7 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <a class="btn btn-outline-light" role="button" href="#">
+                    <a class="btn btn-outline-light" role="button" href="{{route('product.cart')}}">
                         <i class="bi-cart-fill me-1"></i>
                         Cart
                         <span class="badge bg-light text-dark ms-1 rounded-pill">0</span>
