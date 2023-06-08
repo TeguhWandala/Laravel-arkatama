@@ -30,7 +30,7 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($category as $category)
-                                <li><a class="dropdown-item" href="#!">{{ $category->name }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('landing', ['category' => $category->name]) }}">{{ $category->name }}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -43,6 +43,7 @@
                     </a>
 
                     @auth
+                    
                         <a href="{{ route('dashboard') }}" class="btn btn-outline-light ms-1">
                             <i class="bi-person-fill me-1"></i>
                             Dashboard
@@ -55,6 +56,7 @@
                             Login
                         </a>
                     @endguest
+                    
             </div>
         </div>
     </nav>

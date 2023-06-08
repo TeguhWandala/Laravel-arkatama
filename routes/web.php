@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
@@ -10,7 +11,6 @@ use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +31,10 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
 Route::middleware('auth')->group(function() {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-    
-    Route::get('product/cart', [ProductController::class, 'index'])->name('product.cart');
 
 
     // Dashboard
@@ -51,7 +50,6 @@ Route::middleware('auth')->group(function() {
         Route::put('/slider/{id}', [SliderController::class, 'update'])->name('slider.update'); // route untuk mengupdate data
         Route::delete('/slider/{id}', [SliderController::class, 'destroy'])->name('slider.destroy'); // route untuk menghapus data
     });
-
 
     // STAFF & ADMIN
     Route::middleware('role:Admin|Staff')->group(function() {
@@ -95,5 +93,5 @@ Route::middleware('auth')->group(function() {
         Route::put('/role/{id}', [RoleController::class, 'update'])->name('role.update');
         Route::delete('/role/{id}', [RoleController::class, 'destroy'])->name('role.destroy');
     });
-       
+
 });
